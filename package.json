@@ -1,0 +1,53 @@
+{
+  "name": "prot1",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node node_modules/react-native/local-cli/cli.js start",
+    "test": "jest",
+    "flow": "flow",
+    "flow-stop": "flow stop",
+    "watch-need-help": "echo 256 | sudo tee -a /proc/sys/fs/inotify/max_user_instances && echo 32768 | sudo tee -a /proc/sys/fs/inotify/max_queued_events && echo 65536 | sudo tee -a /proc/sys/fs/inotify/max_user_watches && watchman shutdown-server"
+  },
+  "dependencies": {
+    "@material-ui/core": "^4.9.13",
+    "@react-native-community/masked-view": "^0.1.10",
+    "@react-navigation/bottom-tabs": "^5.4.5",
+    "@react-navigation/stack": "^5.2.14",
+    "@react-navigation/tabs": "0.0.0-alpha.12",
+    "expo": "^37.0.12",
+    "expo-cli": "^3.20.9",
+    "expo-font": "~8.0.0",
+    "expo-sqlite": "~8.0.0",
+    "formik": "^2.1.4",
+    "native-base": "^2.13.12",
+    "react": "^16.9.0",
+    "react-dom": "^16.13.1",
+    "react-native": "^0.62.2",
+    "react-native-elements": "^2.0.0",
+    "react-native-gesture-handler": "^1.6.1",
+    "react-native-reanimated": "^1.8.0",
+    "react-native-safe-area-context": "^0.7.3",
+    "react-native-screens": "^2.7.0",
+    "react-native-sqlite-storage": "^5.0.0",
+    "react-native-vector-icons": "^6.6.0",
+    "react-navigation": "^4.3.9",
+    "react-navigation-drawer": "2.2.2",
+    "react-navigation-stack": "^2.3.13",
+    "react-navigation-tabs": "2.5.5",
+    "yup": "^0.28.5"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.9.0",
+    "@babel/runtime": "^7.9.2",
+    "@react-native-community/eslint-config": "^0.0.5",
+    "babel-jest": "^24.9.0",
+    "eslint": "^6.5.1",
+    "jest": "^24.9.0",
+    "metro-react-native-babel-preset": "^0.58.0",
+    "react-test-renderer": "16.11.0"
+  },
+  "jest": {
+    "preset": "react-native"
+  }
+}
