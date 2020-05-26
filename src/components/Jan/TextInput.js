@@ -1,6 +1,6 @@
 import React from 'react';
 import {View, Text, StyleSheet, TextInput as RNTextInput} from 'react-native';
-import styleMeusDados from '../styles/styleMeusDados';
+import styleMeusDados from '../../styles/styleMeusDados';
 
 function TextInput({
   style,

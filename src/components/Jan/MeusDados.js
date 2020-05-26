@@ -3,7 +3,7 @@ import { createAppContainer } from 'react-navigation';
 import { createMaterialTopTabNavigator } from 'react-navigation-tabs';
 import { Icon } from 'react-native-elements';
 
-import { InformacoesPessoais, EnderecoPaciente, ContatoPaciente, Anamnese, EnderecoLaboratorio } from '../abas/index';
+import { InformacoesPessoais, EnderecoPaciente, ContatoPaciente, Anamnese, EnderecoLaboratorio } from '../../abas/index';
 
 const MainAbas = createMaterialTopTabNavigator (
     {

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import { Text, View, Image, TouchableOpacity } from 'react-native';
+import { Text, View, TouchableOpacity } from 'react-native';
 
-import styleMenu from '../styles/styleMenu';
+import styleMenu from '../../styles/styleMenu';
 
 export default class Menu extends Component{
 	

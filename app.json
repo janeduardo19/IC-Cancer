@@ -2,11 +2,11 @@
   "name": "Prot1",
   "displayName": "Prot1",
   "expo":{
-      "sdkVersion": "36.0.0",
+      "sdkVersion": "37.0.0",
       "name": "Prot1",
       "slug": "expo-template-bare",
       "version": "1.0.0",
       "entryPoint": "node_modules/expo/AppEntry.js",
-      "platforms": ["ios", "android", "web"]    
+      "platforms": ["ios", "android", "web"]
   }
 }
