@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, StyleSheet, TouchableOpacity, Text } from 'react-native';
 import { Formik } from 'formik';
-import TextInput from '../components/TextInput';
+import TextInput from '../components/Jan/TextInput';
 import styleMeusDados from '../styles/styleMeusDados';
 import Validation from './Validation';
 
