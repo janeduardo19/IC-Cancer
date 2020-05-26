@@ -1,6 +1,7 @@
 import React from 'react';
 import { View, Text, TouchableOpacity, FlatList, StyleSheet, useContext } from 'react-native';
 
+import styleLembretes from '../../styles/styleLembretes'
 
 export const dataMocada = [
   {
@@ -76,10 +77,10 @@ export default function Lembretes({ navigation }){
             <TouchableOpacity key={id} onPress={() => {
               navigation.navigate('Lembrete')
             }}>
-              <View style={styles.container}>
-                <Text style={styles.title}>{title}</Text>
-                <Text style={styles.text}>{subtitle}</Text>
-                <Text style={styles.date}>{date}</Text>
+              <View style={styleLembretes.container}>
+                <Text style={styleLembretes.title}>{title}</Text>
+                <Text style={styleLembretes.text}>{subtitle}</Text>
+                <Text style={styleLembretes.date}>{date}</Text>
               </View>
             </TouchableOpacity>
           ))

@@ -13,7 +13,7 @@ export default class Menu extends Component{
 				</View>
 				<TouchableOpacity onPress={ () => this.props.navigation.navigate('Meus Dados') }>
 					<View style={styleMenu.botaoMeusDados}>
-						//colocar imagem
+						
 						<View style={styleMenu.descricao}>
 							<View style={{alignItems: 'center', width: '100%'}}>
 								<Text style={styleMenu.titulo}>
@@ -30,7 +30,7 @@ export default class Menu extends Component{
 				</TouchableOpacity>
 				<TouchableOpacity onPress={ () => this.props.navigation.navigate('Lembretes') }>
 					<View style={styleMenu.botaoMeusDados}>
-						//colocar imagem
+						
 						<View style={styleMenu.descricao}>
 							<View style={{alignItems: 'center', width: '100%'}}>
 								<Text style={styleMenu.titulo}>
