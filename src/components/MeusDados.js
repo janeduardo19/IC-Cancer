@@ -9,52 +9,26 @@ const MainAbas = createMaterialTopTabNavigator (
     {
         Info: {
             screen: InformacoesPessoais,
-            navigationOptions: {
-                tabBarIcon: ({ tintColor }) => (
-                    <Icon name="paper-plane" type="font-awesome" />
-                )
-            },
         },
         Residencia: {
             screen: EnderecoPaciente,
-            navigationOptions: {
-                tabBarIcon: ({ tintColor }) => (
-                    <Icon name="paper-plane" type="font-awesome" />
-                )
-            },
         },
         Contato: {
             screen: ContatoPaciente,
-            navigationOptions: {
-                tabBarIcon: ({ tintColor }) => (
-                    <Icon name="paper-plane" type="font-awesome" />
-                )
-            },
         },
         
         Anamnese: {
             screen: Anamnese,
-            navigationOptions: {
-                tabBarIcon: ({ tintColor }) => (
-                    <Icon name="paper-plane" type="font-awesome" />
-                )
-            },
         },
         Laboratorio: {
             screen: EnderecoLaboratorio,
-            navigationOptions: {
-                tabBarIcon: ({ tintColor }) => (
-                    <Icon name="paper-plane" type="font-awesome" />
-                )
-            },
         },
     },
     {
         tabBarOptions: {
-            showIcon: true,
             activeTintColor: 'tomato',
-            inactiveTintColor: 'gray',
-            showLabel: false,
+            inactiveTintColor: 'blue',
+            showLabel: true,
             style: {
                 backgroundColor: 'white',
             }

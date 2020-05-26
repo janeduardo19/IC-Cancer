@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Text, View, Image, TouchableOpacity } from 'react-native';
-import Ionicons from 'react-native-vector-icons/Ionicons';
 
 import styleMenu from '../styles/styleMenu';
 
@@ -14,7 +13,7 @@ export default class Menu extends Component{
 				</View>
 				<TouchableOpacity onPress={ () => this.props.navigation.navigate('Meus Dados') }>
 					<View style={styleMenu.botaoMeusDados}>
-						
+						//colocar imagem
 						<View style={styleMenu.descricao}>
 							<View style={{alignItems: 'center', width: '100%'}}>
 								<Text style={styleMenu.titulo}>
@@ -25,6 +24,22 @@ export default class Menu extends Component{
 								<Text style={{color: '#0000CD', fontWeight: 'bold'}}>Clique aqui: </Text>
 								Vizualize seu nome, nome da sua mãe, 
 								data de nascimento e outros.	
+							</Text>
+						</View>
+					</View>
+				</TouchableOpacity>
+				<TouchableOpacity onPress={ () => this.props.navigation.navigate('Lembretes') }>
+					<View style={styleMenu.botaoMeusDados}>
+						//colocar imagem
+						<View style={styleMenu.descricao}>
+							<View style={{alignItems: 'center', width: '100%'}}>
+								<Text style={styleMenu.titulo}>
+									Lembretes	
+								</Text>
+							</View>
+							<Text style={styleMenu.texto}>
+								<Text style={{color: '#0000CD', fontWeight: 'bold'}}>Clique aqui: </Text>
+								Visualiza os lembretes de consulta e exames.
 							</Text>
 						</View>
 					</View>
