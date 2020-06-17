@@ -1,12 +1,32 @@
 {
-  "name": "Prot1",
-  "displayName": "Prot1",
-  "expo":{
-      "sdkVersion": "37.0.0",
-      "name": "Prot1",
-      "slug": "expo-template-bare",
-      "version": "1.0.0",
-      "entryPoint": "node_modules/expo/AppEntry.js",
-      "platforms": ["ios", "android", "web"]
+  "expo": {
+    "name": "integracaov4",
+    "slug": "integracaov4",
+    "platforms": [
+      "ios",
+      "android",
+      "web"
+    ],
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/images/icon.png",
+    "scheme": "myapp",
+    "splash": {
+      "image": "./assets/images/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "updates": {
+      "fallbackToCacheTimeout": 0
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true
+    },
+    "web": {
+      "favicon": "./assets/images/favicon.png"
+    }
   }
 }
