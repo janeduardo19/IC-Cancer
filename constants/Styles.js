@@ -106,5 +106,35 @@ const styles = StyleSheet.create({
       fontSize: 14,
       color: '#2e78b7',
     },
+    dataContainer: {
+      flex: 1,
+      backgroundColor: '#00bfff',
+      padding: 5,
+    },
+    dataLabel: {
+      fontSize: 17,
+      fontWeight: 'bold',
+      marginTop: 5
+    },
+    dataInput: {
+      width: '100%',
+      height: 30,
+      borderLeftWidth: 1.5,
+      borderBottomWidth: 1,
+      borderBottomColor: '#000',
+      borderRadius: 3,
+      padding: 3,
+      fontSize: 15,
+      backgroundColor: '#fff'
+    },
+    dataRow: {
+      flexDirection: 'row',
+      flexWrap: 'wrap',
+      width: '100%',
+    },
+    dataMargin: {
+      marginRight: 7,
+      marginBottom: 5
+    },
   });
   export default styles;

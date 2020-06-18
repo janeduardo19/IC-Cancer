@@ -18,7 +18,7 @@ export default function BottomTabNavigator({ navigation, route }) {
     <BottomTab.Navigator initialRouteName={INITIAL_ROUTE_NAME}>
       <BottomTab.Screen
         name="Meus Dados"
-        component={HomeScreen}
+        component={InfoPessoais}
         options={{
           title: 'Meus Dados',
           tabBarIcon: ({ focused }) => <TabBarIcon focused={focused} name="md-person" />,

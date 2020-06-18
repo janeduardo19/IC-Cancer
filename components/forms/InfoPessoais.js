@@ -1,47 +1,163 @@
 import React from 'react';
-import { useFormik } from 'formik';
+import { View, TextInput, Button, Text } from 'react-native';
+import { withFormik } from 'formik';
+import * as Yup from 'yup';
 
-const InfoPessoais = () => {
+import Style from '../../constants/Styles';
 
-  const formik = useFormik({
-    initialValues: {
-      firstName: '',
-      lastName: '',
-      email: '',
-    },
-    onSubmit: values => {
-      alert(JSON.stringify(values, null, 2));
-    },
-  });
-  return (
-    <form onSubmit={formik.handleSubmit}>
-      <label htmlFor="firstName">First Name</label>
-      <input
-        id="firstName"
-        name="firstName"
-        type="text"
-        onChange={formik.handleChange}
-        value={formik.values.firstName}
+const InfoPessoais = (props) => (
+  <View style={Style.dataContainer}>
+    <View style={Style.dataMargin}>
+      <Text style={Style.dataLabel}>
+        Nome:
+      </Text>
+      <TextInput
+        style={Style.dataInput}
+        value={props.values.name}
+        onChangeText={text => props.setFieldValue('name', text)}
       />
-      <label htmlFor="lastName">Last Name</label>
-      <input
-        id="lastName"
-        name="lastName"
-        type="text"
-        onChange={formik.handleChange}
-        value={formik.values.lastName}
+    </View>
+    <View style={Style.dataMargin}>
+      <Text style={Style.dataLabel}>
+        Nome da Mãe:
+      </Text>
+      <TextInput
+        style={Style.dataInput}
+        value={props.values.motherName}
+        onChangeText={text => props.setFieldValue('motherName', text)}
       />
-      <label htmlFor="email">Email Address</label>
-      <input
-        id="email"
-        name="email"
-        type="email"
-        onChange={formik.handleChange}
-        value={formik.values.email}
-      />
-      <button type="submit">Submit</button>
-    </form>
-  );
-};
+    </View>
+    <View style={Style.dataRow}>
+      <View style={Style.dataMargin}>  
+        <Text style={Style.dataLabel}>
+          Cartão do SUS:
+        </Text>
+        <TextInput
+          style={[Style.dataInput, {width: 150}]}
+          value={props.values.sus}
+          onChangeText={text => props.setFieldValue('sus', text)}
+        />
+      </View>
+      <View style={Style.dataMargin}>
+        <Text style={Style.dataLabel}>
+          CPF:
+        </Text>
+        <TextInput
+          style={[Style.dataInput, {width: 120}]}
+          value={props.values.cpf}
+          onChangeText={text => props.setFieldValue('cpf', text)}
+        />
+      </View>
+      <View style={Style.dataMargin}>
+        <Text style={Style.dataLabel}>
+          RG:
+        </Text>
+        <TextInput
+          style={[Style.dataInput, {width: 100}]}
+          value={props.values.rg}
+          onChangeText={text => props.setFieldValue('rg', text)}
+        />
+      </View>
+      <View style={Style.dataMargin}>
+        <Text style={Style.dataLabel}>
+          Dt. Emissão:
+        </Text>
+        <TextInput
+          style={Style.dataInput}
+          value={props.values.dtEmissao}
+          onChangeText={text => props.setFieldValue('dtEmissao', text)}
+        />
+      </View>
+      <View style={Style.dataMargin}>  
+        <Text style={Style.dataLabel}>
+          Emissor:
+        </Text>
+        <TextInput
+          style={Style.dataInput}
+          value={props.values.emissor}
+          onChangeText={text => props.setFieldValue('emissor', text)}
+        />
+      </View>
+      <View style={Style.dataMargin}>
+        <Text style={Style.dataLabel}>
+          Dt. Nascimento:
+        </Text>
+        <TextInput
+          style={Style.dataInput}
+          value={props.values.dtNascimento}
+          onChangeText={text => props.setFieldValue('dtNascimento', text)}
+        />
+      </View>
+      <View style={Style.dataMargin}>
+        <Text style={Style.dataLabel}>
+          Idade:
+        </Text>
+        <TextInput
+          style={Style.dataInput}
+          value={props.values.idade}
+          onChangeText={text => props.setFieldValue('idade', text)}
+        />
+      </View>
+      <View style={Style.dataMargin}>
+        <Text style={Style.dataLabel}>
+          Gênero:
+        </Text>
+        <TextInput
+          style={[Style.dataInput, {width: 100}]}
+          value={props.values.genero}
+          onChangeText={text => props.setFieldValue('genero', text)}
+        />
+      </View>
+      <View style={[Style.dataMargin, {marginBottom: 10}]}>
+        <Text style={Style.dataLabel}>
+          Nacionalidade:
+        </Text>
+        <TextInput
+          style={Style.dataInput}
+          value={props.values.nacionalidade}
+          onChangeText={text => props.setFieldValue('nacionalidade', text)}
+        />
+      </View>
+    </View>
 
-export default InfoPessoais;
+    <Button
+      onPress={props.handleSubmit}
+      title="Atualizar"
+    />
+  </View>
+);
+
+export default withFormik({
+  mapPropsToValues: () => ({ 
+    name: '', 
+    motherName: '',
+    sus: '',
+    cpf: '',
+    rg: '',
+    dtEmissao: '',
+    emissor: '',
+    dtNascimento: '',
+    idade: '',
+    genero: '',
+    nacionalidade: '',
+  }),
+
+  validationSchema: Yup.object().shape({
+    
+  }),
+
+  handleSubmit: (values, { setSubmitting, setErrors }) => {
+    console.log(values);
+
+    { props.isSubmitting && <ActivityIndicator /> };
+    
+    apiService.post('/authenticate', values)
+    .then(/* sucesso */)
+    .catch(err => {
+      setSubmitting(false);
+      setErrors({ message: err.message });
+    });
+
+    { props.errors.message && <Text>{props.errors.message}</Text> };
+  }
+})(InfoPessoais);
