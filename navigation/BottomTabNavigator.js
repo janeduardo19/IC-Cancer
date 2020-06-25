@@ -5,7 +5,8 @@ import TabBarIcon from '../components/TabBarIcon';
 import HomeScreen from '../src/screens/HomeScreen';
 import ReminderList from '../src/screens/ReminderList';
 import ChatScreen from '../src/screens/ChatScreen';
-import InfoPessoais from '../components/forms/InfoPessoais';
+import tab from './tab';
+import FormsNavigator from './FormsNavigator';
 
 const BottomTab = createBottomTabNavigator();
 const INITIAL_ROUTE_NAME = 'Meus Dados';
@@ -15,10 +16,13 @@ export default function BottomTabNavigator({ navigation, route }) {
   navigation.setOptions({ headerTitle: getHeaderTitle(route) });
 
   return (
-    <BottomTab.Navigator initialRouteName={INITIAL_ROUTE_NAME}>
+    <BottomTab.Navigator 
+      initialRouteName={INITIAL_ROUTE_NAME}
+      tabBarComponent={{tab}}
+      >
       <BottomTab.Screen
         name="Meus Dados"
-        component={InfoPessoais}
+        component={FormsNavigator}
         options={{
           title: 'Meus Dados',
           tabBarIcon: ({ focused }) => <TabBarIcon focused={focused} name="md-person" />,
@@ -60,7 +64,7 @@ function getHeaderTitle(route) {
       return 'Meus Dados';
     case 'Lembretes':
       return 'Lembretes';
-    case 'M. de Saude':
+    case 'M. de Saúde':
       return 'Medidas de Saude';
     case 'Canal Aberto':
       return 'Canal Aberto';

@@ -9,13 +9,13 @@ import styles from '../../constants/Styles';
 export default function HomeScreen() {
 
   return (
-    <View style={styles.centralizedConteiner}>
+    <View style={{flex:1,justifyContent: 'center', alignItems: 'center', }}>
       <View>
       <Image
-        style={styles.imageView}
+        style={styles.SafeView}
         source={require('../../assets/images/logoicvetorizada.png')}/>
       </View>
-      <Text style={{marginVertical:'20%', fontSize: 20}}> Olá, seja muito bem vindo </Text>
+      <Text style={{marginVertical:'20%', fontSize: 20, alignItems: 'center'}}> Olá, seja muito bem vindo </Text>
     </View>
   );
 }

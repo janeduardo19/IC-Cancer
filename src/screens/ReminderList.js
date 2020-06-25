@@ -18,12 +18,13 @@ export default class ReminderList extends Component {
 
   render() {
    const {ReminderList} = this.state;
+   const navigation = (this.props.navigation)
    return (
     <ScrollView>
       <View>
         { 
         ReminderList.map(({id,hour,date,title,subtitle}) => (
-          <TouchableOpacity key={id}>
+          <TouchableOpacity key={id} onPress={() => navigation.navigate('Reminder')}>
             <View>
               <View style={styles.container}>
                 <View style={{flex: 1,flexDirection: "row", justifyContent: "space-between", padding:1}}>

@@ -26,19 +26,13 @@ const styles = StyleSheet.create({
     container: {
       flex: 1,
     },
-    imageView: {
-      width: widthPercentageToDP('80%'),
+    imageContainer: {
+      resizeMode: 'contain',
       height: heightPercentageToDP('20%'),
-      resizeMode: 'contain'
-    },
-    centralizedConteiner: {
-      flex: 1,
-      flexDirection: 'column',
-      alignItems: 'center',
-      alignContent: 'center'
+      marginBottom: '20%',
+      marginTop: '30%'
     },
     textInput:{
-      flex: 1,
       width: widthPercentageToDP('80%'),
       height: heightPercentageToDP('6%'),
       backgroundColor: '#212121',
@@ -50,11 +44,11 @@ const styles = StyleSheet.create({
       marginVertical: heightPercentageToDP('2%'),
     },
     SafeView:{
-      flexDirection: 'column',
-      alignItems: 'center',
+      width: widthPercentageToDP('100%'),
+      height: heightPercentageToDP('30%'),
+      resizeMode: 'contain'
     },
     StyledButton: {
-      flex: 1,
       width: widthPercentageToDP('85%'),
       height: heightPercentageToDP('8%'),
       backgroundColor: '#607d8b',
@@ -62,10 +56,28 @@ const styles = StyleSheet.create({
       flexDirection: 'column',
       alignContent: 'center',
       alignItems: 'center',
+      shadowColor: '#000',
+      shadowOpacity: 0.8,
+      shadowRadius: 0.1,
+      shadowOffset: {
+       width: 0,
+       height: 8,
+    },
+      elevation: 6,
+    },
+    bar: {
+      width: widthPercentageToDP('100%'),
+      height: heightPercentageToDP('6%'),
+      borderTopLeftRadius: 4,
+      borderTopRightRadius: 4,
     },
     ButtonText: {
-      fontSize: 20,
+      fontSize: 28,
       color: Colors.LoginText,
+      position: 'absolute',
+      top: '20%',
+      alignItems: 'center',
+      justifyContent: 'center',
     },
     tabBarInfoContainer: {
       position: 'absolute',
@@ -108,33 +120,31 @@ const styles = StyleSheet.create({
     },
     dataContainer: {
       flex: 1,
-      backgroundColor: '#00bfff',
+      backgroundColor: '#00bcd4',
       padding: 5,
+      flexDirection: 'row',
+      flexWrap: "wrap",
+      alignItems: 'center',
     },
+    //  marginVertical: heightPercentageToDP('2%')
     dataLabel: {
-      fontSize: 17,
-      fontWeight: 'bold',
-      marginTop: 5
+        fontSize: 20,
+        fontWeight: 'bold',
     },
     dataInput: {
-      width: '100%',
-      height: 30,
-      borderLeftWidth: 1.5,
-      borderBottomWidth: 1,
-      borderBottomColor: '#000',
-      borderRadius: 3,
-      padding: 3,
-      fontSize: 15,
-      backgroundColor: '#fff'
-    },
-    dataRow: {
-      flexDirection: 'row',
-      flexWrap: 'wrap',
-      width: '100%',
+        height: heightPercentageToDP('6%'),
+        borderLeftWidth: 1.9,
+        borderBottomWidth: 1.9,
+        borderBottomColor: '#000',
+        borderRadius: 8,
+        padding: 3,
+        fontSize: 15,
+        backgroundColor: '#fff',
+        marginRight: 5,
     },
     dataMargin: {
-      marginRight: 7,
-      marginBottom: 5
+        marginHorizontal: heightPercentageToDP('0.6%'),
+        marginVertical: heightPercentageToDP('0.6%')
     },
   });
   export default styles;

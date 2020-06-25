@@ -3023,7 +3023,7 @@ expect@^24.9.0:
     jest-message-util "^24.9.0"
     jest-regex-util "^24.9.0"
 
-expo-asset@~8.1.0, expo-asset@~8.1.5:
+expo-asset@~8.1.5:
   version "8.1.5"
   resolved "https://registry.yarnpkg.com/expo-asset/-/expo-asset-8.1.5.tgz#6d0e3504cd719e9b888d32978d419d6522eed799"
   integrity sha512-Ivc4GsAXawfFT6IgjvV4BHXFdAHT+1ZhewuBm/mQ1vvkYOqcPksDVRuChdbfvgAl82lbDfAN/FeEcIfGnvevEQ==
@@ -6152,7 +6152,7 @@ react-native-paper@^3.10.1:
     color "^3.1.2"
     react-native-safe-area-view "^0.14.9"
 
-"react-native-parsed-text@github:EvanBacon/react-native-parsed-text":
+react-native-parsed-text@EvanBacon/react-native-parsed-text:
   version "0.0.22"
   resolved "https://codeload.github.com/EvanBacon/react-native-parsed-text/tar.gz/c909f64ee437796fd1b047edd73146fc89edb796"
   dependencies:
@@ -6173,10 +6173,10 @@ react-native-ratings@^7.2.0:
     lodash "^4.17.4"
     prop-types "^15.5.10"
 
-react-native-reanimated@~1.7.0:
-  version "1.7.1"
-  resolved "https://registry.yarnpkg.com/react-native-reanimated/-/react-native-reanimated-1.7.1.tgz#6363c7f3ebbabc56a05d5dccaf09d95f3b6a2d69"
-  integrity sha512-aBwhoQdH4shkeTPbi7vKcAwYOzBp/6zElEKuIOgby11TceoM7y5SgNImC3HbDWWld3QV2PA2AgQGwAy51WgF3Q==
+react-native-reanimated@^1.9.0:
+  version "1.9.0"
+  resolved "https://registry.yarnpkg.com/react-native-reanimated/-/react-native-reanimated-1.9.0.tgz#38676c99dd585504fdc7331efb45e5f48ec7339a"
+  integrity sha512-Aj+spgIHRiVv7ezGADxnSH1EoKrQRD2+XaSiGY0MiB/pvRNNrZPSJ+3NVpvLwWf9lZMOP7dwqqyJIzoZgBDt8w==
   dependencies:
     fbjs "^1.0.0"
 

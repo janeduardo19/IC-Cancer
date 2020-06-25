@@ -2,10 +2,12 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import * as React from 'react';
 import { Platform, StatusBar, StyleSheet, View } from 'react-native';
+
 import LoginScreen from './src/screens/LoginScreen';
+import BottomTabNavigator from './navigation/BottomTabNavigator';
+import FormsNavigator from './navigation/FormsNavigator';
 
 import useCachedResources from './hooks/useCachedResources';
-import BottomTabNavigator from './navigation/BottomTabNavigator';
 
 import { DefaultTheme, Provider as PaperProvider } from 'react-native-paper';
 const theme = {
@@ -30,11 +32,6 @@ const theme = {
   },
 };
 
-/*
-<Stack.Screen options={{headerShown: false}} name="Login" component={LoginScreen} /> <===To tentando resolver
-*/ 
-
-
 const Stack = createStackNavigator();
 
 export default function App() {
@@ -49,7 +46,9 @@ export default function App() {
         <PaperProvider theme={theme}>
           <NavigationContainer>
             <Stack.Navigator>
-              <Stack.Screen name="Root" component={BottomTabNavigator} />
+              <Stack.Screen options={{headerShown: false}} name="Login" component={LoginScreen} />
+              <Stack.Screen options={{headerShown: false}} name="Root" component={BottomTabNavigator} />
+              <Stack.Screen name="FormsRoot" component={FormsNavigator} />
             </Stack.Navigator>
           </NavigationContainer>
         </PaperProvider>
