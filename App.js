@@ -2,14 +2,16 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import * as React from 'react';
 import { Platform, StatusBar, StyleSheet, View } from 'react-native';
+import { DefaultTheme, Provider as PaperProvider } from 'react-native-paper';
 
 import LoginScreen from './src/screens/LoginScreen';
 import BottomTabNavigator from './navigation/BottomTabNavigator';
 import FormsNavigator from './navigation/FormsNavigator';
-
 import useCachedResources from './hooks/useCachedResources';
+import Reminder from './src/screens/Reminder';
+//import ThemeContext from './assets/context/ThemeContext';
+import DrawerNavigator from './navigation/DrawerNavigator';
 
-import { DefaultTheme, Provider as PaperProvider } from 'react-native-paper';
 const theme = {
   ...DefaultTheme,
   roundness: 2,
@@ -22,7 +24,7 @@ const theme = {
     ...DefaultTheme.fontSize,
     medium: 12,
     big: 12,
-    giant: 18,
+    giant: 30,
   },
   chatTime: {
     ...DefaultTheme.chatTime,
@@ -36,6 +38,7 @@ const Stack = createStackNavigator();
 
 export default function App() {
   const isLoadingComplete = useCachedResources();
+  //const themeHook = useState("light");
 
   if (!isLoadingComplete) {
     return null;
@@ -49,6 +52,8 @@ export default function App() {
               <Stack.Screen options={{headerShown: false}} name="Login" component={LoginScreen} />
               <Stack.Screen options={{headerShown: false}} name="Root" component={BottomTabNavigator} />
               <Stack.Screen name="FormsRoot" component={FormsNavigator} />
+              <Stack.Screen name="Reminder" component={Reminder} />
+              <Stack.Screen options={{headerShown: false}} name="Menu" component={DrawerNavigator} />
             </Stack.Navigator>
           </NavigationContainer>
         </PaperProvider>

@@ -6,10 +6,10 @@ import HomeScreen from '../src/screens/HomeScreen';
 import ReminderList from '../src/screens/ReminderList';
 import ChatScreen from '../src/screens/ChatScreen';
 import tab from './tab';
-import FormsNavigator from './FormsNavigator';
+import styles from '../constants/Styles';
 
 const BottomTab = createBottomTabNavigator();
-const INITIAL_ROUTE_NAME = 'Meus Dados';
+const INITIAL_ROUTE_NAME = 'Home';
 
 export default function BottomTabNavigator({ navigation, route }) {
   
@@ -21,11 +21,11 @@ export default function BottomTabNavigator({ navigation, route }) {
       tabBarComponent={{tab}}
       >
       <BottomTab.Screen
-        name="Meus Dados"
-        component={FormsNavigator}
+        name="Home"
+        component={HomeScreen}
         options={{
-          title: 'Meus Dados',
-          tabBarIcon: ({ focused }) => <TabBarIcon focused={focused} name="md-person" />,
+          title: 'Home',
+          tabBarIcon: ({ focused }) => <TabBarIcon focused={focused} name="md-home" />,
         }}
       />
       <BottomTab.Screen

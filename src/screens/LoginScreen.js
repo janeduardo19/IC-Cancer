@@ -38,7 +38,7 @@ const LoginScreen = ({navigation}) => {
                             placeholderTextColor='#fafafa'
                         />
                     </View>
-                    <TouchableOpacity onPress={()  => {navigation.navigate('Root')}}>
+                    <TouchableOpacity onPress={()  => {navigation.navigate('Menu')}}>
                     <View style={styles.StyledButton}>
                         <Text style={styles.ButtonText}>L O G I N</Text>
                     </View>

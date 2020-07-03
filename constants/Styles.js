@@ -22,9 +22,14 @@ export {
   heightPercentageToDP
 };
 
+
 const styles = StyleSheet.create({
     container: {
       flex: 1,
+    },
+    bottomTab: {
+      borderRadius: 20,
+      height: heightPercentageToDP('20%'),
     },
     imageContainer: {
       resizeMode: 'contain',
