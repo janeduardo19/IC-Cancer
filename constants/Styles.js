@@ -1,7 +1,6 @@
 import * as React from 'react';
 import { Platform, StyleSheet, ColorPropType} from 'react-native';
 
-
 import {Dimensions, PixelRatio} from 'react-native';
 import Colors from './Colors';
 import { ThemeConsumer } from 'react-native-elements';
@@ -27,7 +26,26 @@ const styles = StyleSheet.create({
     container: {
       flex: 1,
     },
-    bottomTab: {
+    marginBasic: {
+      margin: 10,
+      justifyContent: 'flex-start'
+    },
+    textBasic: {
+      textAlign: 'justify',
+      fontSize: heightPercentageToDP('2%'),
+      marginVertical: heightPercentageToDP('1%')
+    },
+    titleText:{
+      textAlign: 'center',
+      fontWeight: 'bold',
+      fontSize: heightPercentageToDP('2%'),
+      marginVertical: heightPercentageToDP('5%')
+    },
+    homeTitleText:{
+      color: Colors.blue,
+      fontSize: heightPercentageToDP('4.5%')
+    },
+    tomTab: {
       borderRadius: 20,
       height: heightPercentageToDP('20%'),
     },
@@ -37,16 +55,37 @@ const styles = StyleSheet.create({
       marginBottom: '20%',
       marginTop: '30%'
     },
+    imageHomeContainer: {
+      resizeMode: 'contain',
+      height: heightPercentageToDP('20%'),
+    },
+    imageContainerMedium: {
+      resizeMode: 'contain',
+      height: heightPercentageToDP('35%')
+    },
+    imageContainerGreat: {
+      resizeMode: 'contain',
+      height: heightPercentageToDP('70%'),
+      marginBottom: '20%',
+      marginTop: '20%'
+    },
     textInput:{
-      width: widthPercentageToDP('80%'),
+      width: widthPercentageToDP('85%'),
       height: heightPercentageToDP('6%'),
-      backgroundColor: '#212121',
-      opacity: 0.4,
-      borderRadius: 30,
+      marginTop: heightPercentageToDP('2.5%'),
+      backgroundColor: Colors.white,
+      borderRadius: 10,
       flexDirection: 'row',
       padding: 10,
       alignItems: 'center',
-      marginVertical: heightPercentageToDP('2%'),
+    },
+    subTextInput:{
+      marginBottom: heightPercentageToDP('1%'),
+      fontSize: heightPercentageToDP('2%'),
+      alignSelf: 'flex-end',
+      margin:2,
+      color: 'blue',
+      textDecorationLine: 'underline',
     },
     SafeView:{
       width: widthPercentageToDP('100%'),
@@ -55,20 +94,32 @@ const styles = StyleSheet.create({
     },
     StyledButton: {
       width: widthPercentageToDP('85%'),
-      height: heightPercentageToDP('8%'),
-      backgroundColor: '#607d8b',
-      borderRadius: 40,
+      height: heightPercentageToDP('7%'),
+      backgroundColor: Colors.blue,
+      borderRadius: 10,
       flexDirection: 'column',
       alignContent: 'center',
       alignItems: 'center',
-      shadowColor: '#000',
-      shadowOpacity: 0.8,
-      shadowRadius: 0.1,
-      shadowOffset: {
-       width: 0,
-       height: 8,
+      marginTop: heightPercentageToDP('5%'),
     },
-      elevation: 6,
+    primaryButton:{
+      width: widthPercentageToDP('90%'),
+      height: heightPercentageToDP('8%'),
+      backgroundColor: Colors.secondaryLight,
+      borderRadius: 20,
+      margin:5,
+      flexDirection: 'row',
+      alignContent: 'center',
+      alignItems: 'center',
+      justifyContent:'center',
+      shadowColor: '#000',
+      shadowOpacity: 0.9,
+      shadowRadius: 0.5,
+      shadowOffset: {
+       width: 3,
+       height: 3,
+     },
+      elevation: 5,
     },
     bar: {
       width: widthPercentageToDP('100%'),
@@ -83,6 +134,22 @@ const styles = StyleSheet.create({
       top: '20%',
       alignItems: 'center',
       justifyContent: 'center',
+    },
+    homeButton:{
+      margin: 15,
+      borderRadius: 10,
+      backgroundColor: Colors.white,
+      alignItems: 'center',
+      width: widthPercentageToDP('40%'),
+      height: heightPercentageToDP('20%'),
+      shadowColor: '#000',
+      shadowOpacity: 0.8,
+      shadowRadius: 0.1,
+      shadowOffset: {
+       width: 0,
+       height: 8,
+     },
+      elevation: 7,
     },
     tabBarInfoContainer: {
       position: 'absolute',
@@ -151,5 +218,11 @@ const styles = StyleSheet.create({
         marginHorizontal: heightPercentageToDP('0.6%'),
         marginVertical: heightPercentageToDP('0.6%')
     },
+    header:{
+      width: widthPercentageToDP('100%'),
+      height: heightPercentageToDP('10%'), 
+      justifyContent: 'space-between', 
+      padding: 18,
+    }
   });
   export default styles;

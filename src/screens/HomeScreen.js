@@ -4,18 +4,60 @@ import { Image, Platform, StyleSheet, Text, TouchableOpacity, View } from 'react
 import { ScrollView } from 'react-native-gesture-handler';
 import { CheckBox } from 'react-native-elements'
 import { MonoText } from '../../components/StyledText';
+import { Icon } from 'native-base';
+import { DrawerActions } from '@react-navigation/native';
 import styles from '../../constants/Styles';
 
-export default function HomeScreen() {
+export default function HomeScreen({navigation}) {
 
   return (
-    <View style={{flex:1,justifyContent: 'center', alignItems: 'center', }}>
-      <View>
-      <Image
-        style={styles.SafeView}
-        source={require('../../assets/images/logoicvetorizada.png')}/>
+    <View style={{flex:1,justifyContent: 'center', alignItems: 'center', flexDirection: 'column'}}>
+      <View style={styles.header}>
+        <Icon
+          name='menu'
+          onPress={() => navigation.dispatch(DrawerActions.openDrawer())}
+        />
       </View>
-      <Text style={{marginVertical:'20%', fontSize: 20, alignItems: 'center'}}> Olá, seja muito bem vindo </Text>
+      <View>
+        <Text style={styles.homeTitleText}>
+          Bem vinda !
+        </Text>
+        <Text>
+          Enquanto esteve fora: 
+        </Text>
+      </View>
+      <View style={{justifyContent: 'space-between', flexDirection: 'row'}}>
+        <View style={styles.homeButton}>
+          <Image 
+            style={styles.imageHomeContainer}
+            source={require('../../assets/images/icon1.png')}
+            resizeMode='contain'
+          />
+        </View>
+        <View style={styles.homeButton}>
+          <Image
+             style={styles.imageHomeContainer}
+             source={require('../../assets/images/icon2.png')}
+             resizeMode='contain'
+          />
+        </View>
+      </View>
+      <View style={{justifyContent: 'space-between', flexDirection: 'row'}}>
+        <View style={styles.homeButton}>
+          <Image
+             style={styles.imageHomeContainer}
+             source={require('../../assets/images/icon3.png')}
+             resizeMode='contain'
+          />
+        </View>
+        <View style={styles.homeButton}>
+          <Image
+             style={styles.imageHomeContainer}
+             source={require('../../assets/images/icon4.png')}
+             resizeMode='contain'
+          />
+        </View>
+      </View>
     </View>
   );
 }

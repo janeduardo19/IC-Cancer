@@ -78,13 +78,6 @@ const AdressLab = (props) => (
                 onChangeText={text => props.setFieldValue('ufLab', text)}
             />
         </View>
-        <View style={[styles.dataMargin, {marginLeft: 14}]}>
-            <TouchableOpacity onPress={props.handleSubmit}>
-                <View style={[styles.StyledButton, {height: 30}]}>
-                    <Text style={{color: '#fff', fontSize: 20}}>Atualizar</Text>
-                </View>
-            </TouchableOpacity>
-        </View>        
     </View>
 );
 

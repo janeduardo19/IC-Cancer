@@ -1,8 +1,11 @@
 
 import React,{Component} from 'react';
-import { View, Text, TouchableOpacity, FlatList, StyleSheet, useContext, ScrollView, Button} from 'react-native';
+import { View, Text, TouchableWithoutFeedback, FlatList, StyleSheet, useContext, ScrollView, Button} from 'react-native';
 import TabBarIcon from '../../components/TabBarIcon';
 import axios from 'axios';
+import Colors from '../../constants/Colors';
+import { Icon } from 'native-base';
+import { DrawerActions } from '@react-navigation/native';
 
 export default class ReminderList extends Component {
   state = {
@@ -21,10 +24,16 @@ export default class ReminderList extends Component {
    const navigation = (this.props.navigation)
    return (
     <ScrollView>
-      <View>
+      <View style={styles.header}>
+        <Icon
+          name='menu'
+          onPress={() => navigation.dispatch(DrawerActions.openDrawer())}
+        />
+      </View>
+      <View style={styles.pad}>
         { 
         ReminderList.map(({id,hour,date,title,subtitle}) => (
-          <TouchableOpacity key={id} onPress={() => navigation.navigate('Reminder')}>
+          <TouchableWithoutFeedback key={id} onPress={() => navigation.navigate('Reminder')}>
             <View>
               <View style={styles.container}>
                 <View style={{flex: 1,flexDirection: "row", justifyContent: "space-between", padding:1}}>
@@ -41,7 +50,7 @@ export default class ReminderList extends Component {
               </View>
               <Text style={{height:8, backgroundColor: 'rgba(0,0,0, 0.0)'}}></Text>
             </View>
-          </TouchableOpacity>
+          </TouchableWithoutFeedback>
         ))
         }
       </View>
@@ -53,9 +62,8 @@ export default class ReminderList extends Component {
 export const styles = StyleSheet.create({
   container: {
     padding: 5,
-    backgroundColor: '#cfd8dc',
+    backgroundColor: Colors.white,
     borderRadius: 10,
-    borderColor: '#cfd8dc',
     height: 100,
     shadowColor: '#000',
     shadowOpacity: 0.8,
@@ -76,4 +84,7 @@ export const styles = StyleSheet.create({
   textApp:{
     padding: 5,
   },
+  pad:{
+    padding:'2%'
+  }
 });
