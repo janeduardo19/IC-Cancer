@@ -27,7 +27,7 @@ const AdressLab = ({navigation}) => {
         <LinearGradient 
             colors={[Colors.primary, Colors.secondaryLight]}
             style={{flex:1}}> 
-        <SafeAreaView>
+        <SafeAreaView style={{flexDirection: 'row', flexWrap: 'wrap'}}>
             <View style={[styles.header, {padding: 15, height: 50, backgroundColor: '#fff'}]}>
                 <Icon
                     name='menu'
@@ -35,7 +35,7 @@ const AdressLab = ({navigation}) => {
                     onPress={() => navigation.dispatch(DrawerActions.openDrawer())}
                 />
             </View>
-            <View style={[styles.dataMargin, {width: '100%'}]}>
+            <View style={[styles.dataMargin, {width: '96%'}]}>
                 <Text style={styles.dataLabel}>
                     Nome do Laborátorio:
                 </Text>
@@ -48,7 +48,7 @@ const AdressLab = ({navigation}) => {
                     onChangeText={formik.handleChange('nameLab')}
                 />
             </View>
-            <View style={[styles.dataMargin, {width: '100%'}]}>
+            <View style={[styles.dataMargin, {width: '96%'}]}>
                 <Text style={styles.dataLabel}>
                     Endereço do Laboratório:
                 </Text>
@@ -61,7 +61,7 @@ const AdressLab = ({navigation}) => {
                     onChangeText={formik.handleChange('adressLab')}
                 />
             </View>
-            <View style={styles.dataMargin}>  
+            <View style={[styles.dataMargin, {width: '96%'}]}>  
                 <Text style={styles.dataLabel}>
                     Complemento:
                 </Text>
@@ -74,7 +74,7 @@ const AdressLab = ({navigation}) => {
                     onChangeText={formik.handleChange('complementLab')}
                 />
             </View>
-            <View style={styles.dataMargin}>
+            <View style={[styles.dataMargin, {width: '60%'}]}>
                 <Text style={styles.dataLabel}>
                     Bairro:
                 </Text>
@@ -100,7 +100,7 @@ const AdressLab = ({navigation}) => {
                     onChangeText={formik.handleChange('numberLab')}
                 />
             </View>
-            <View style={styles.dataMargin}>
+            <View style={[styles.dataMargin, {width: '50%'}]}>
                 <Text style={styles.dataLabel}>
                     Cidade:
                 </Text>
@@ -113,7 +113,7 @@ const AdressLab = ({navigation}) => {
                     onChangeText={formik.handleChange('cityLab')}
                 />
             </View>
-            <View style={styles.dataMargin}>  
+            <View style={[styles.dataMargin, {width: '18%'}]}>  
                 <Text style={styles.dataLabel}>
                     UF:
                 </Text>
@@ -127,7 +127,7 @@ const AdressLab = ({navigation}) => {
                 />
             </View>
           <TouchableOpacity onPress={formik.handleSubmit}
-              style={styles.StyledButton}
+              style={[styles.StyledButton, {marginLeft: '8%'}]}
           >
               {formik.isSubmitting ? (
                   <ActivityIndicator color="#FFF" />

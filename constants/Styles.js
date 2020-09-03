@@ -47,24 +47,16 @@ const styles = StyleSheet.create({
       flex: 1,
     },
     //D
-    dataContainer: {
-      flex: 1,
-      backgroundColor: '#00bcd4',
-      padding: 5,
-      flexDirection: 'row',
-      flexWrap: "wrap",
-      alignItems: 'center',
-    },
     dataInput: {
       height: heightPercentageToDP('6%'),
       borderLeftWidth: 1.9,
       borderBottomWidth: 1.9,
       borderBottomColor: '#000',
       borderRadius: 8,
-      padding: 3,
+      padding: 8,
       fontSize: 15,
       backgroundColor: '#fff',
-      marginRight: 5,
+      marginRight: 3,
     },
     dataLabel: {
       fontSize: 20,
@@ -72,7 +64,7 @@ const styles = StyleSheet.create({
     },
     dataMargin: {
       marginHorizontal: heightPercentageToDP('0.6%'),
-      marginVertical: heightPercentageToDP('0.6%')
+      marginLeft: widthPercentageToDP('1.6%')
     },
     //H
     header:{
@@ -177,7 +169,7 @@ const styles = StyleSheet.create({
       alignContent: 'center',
       alignItems: 'center',
       marginTop: heightPercentageToDP('3%'),
-      padding: 14
+      padding: 14,
     },
     subTextInput:{
       marginTop: heightPercentageToDP('2%'),

@@ -25,7 +25,7 @@ const Contact = ({navigation}) => {
         <LinearGradient 
             colors={[Colors.primary, Colors.secondaryLight]}
             style={{flex:1}}>    
-            <SafeAreaView>
+            <SafeAreaView style={{flexDirection: 'row', flexWrap: 'wrap'}}>
                 <View style={[styles.header, {padding: 15, height: 50, backgroundColor: '#fff'}]}>
                     <Icon
                         name='menu'
@@ -33,7 +33,7 @@ const Contact = ({navigation}) => {
                         onPress={() => navigation.dispatch(DrawerActions.openDrawer())}
                     />
                 </View>
-                <View style={[styles.dataMargin, {width: '100%'}]}>
+                <View style={[styles.dataMargin, {width: '96%'}]}>
                     <Text style={styles.dataLabel}>
                         E-mail:
                     </Text>
@@ -46,7 +46,7 @@ const Contact = ({navigation}) => {
                         onChangeText={formik.handleChange('email')}
                     />
                 </View>
-                <View style={[styles.dataMargin, {width: '100%'}]}>
+                <View style={[styles.dataMargin, {width: '16%'}]}>
                     <Text style={styles.dataLabel}>
                         DDD:
                     </Text>
@@ -59,7 +59,7 @@ const Contact = ({navigation}) => {
                         onChangeText={formik.handleChange('ddd')}
                     />
                 </View>
-                <View style={styles.dataMargin}>  
+                <View style={[styles.dataMargin, {width: '35%', marginRight: '27%'}]}>  
                     <Text style={styles.dataLabel}>
                         Celular:
                     </Text>
@@ -85,7 +85,7 @@ const Contact = ({navigation}) => {
                         onChangeText={formik.handleChange('dddTel')}
                     />
                 </View>
-                <View style={styles.dataMargin}>
+                <View style={[styles.dataMargin, {width: '35%'}]}>
                     <Text style={styles.dataLabel}>
                         Telefone:
                     </Text>
@@ -99,7 +99,7 @@ const Contact = ({navigation}) => {
                     />
                 </View>
                 <TouchableOpacity onPress={formik.handleSubmit}
-                    style={styles.StyledButton}
+                    style={[styles.StyledButton, {marginLeft: '8%'}]}
                 >
                     {formik.isSubmitting ? (
                         <ActivityIndicator color="#FFF" />

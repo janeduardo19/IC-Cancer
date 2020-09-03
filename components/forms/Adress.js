@@ -27,7 +27,7 @@ const Adress = ({navigation}) => {
         <LinearGradient 
             colors={[Colors.primary, Colors.secondaryLight]}
             style={{flex:1}}> 
-        <SafeAreaView>
+        <SafeAreaView style={{flexDirection: 'row', flexWrap: 'wrap'}}>
             <View style={[styles.header, {padding: 15, height: 50, backgroundColor: '#fff'}]}>
                 <Icon
                     name='menu'
@@ -35,7 +35,7 @@ const Adress = ({navigation}) => {
                     onPress={() => navigation.dispatch(DrawerActions.openDrawer())}
                 />
             </View>
-            <View style={[styles.dataMargin, {width: '100%'}]}>
+            <View style={[styles.dataMargin, {width: '96%'}]}>
                 <Text style={styles.dataLabel}>
                     Endereço:
                 </Text>
@@ -48,7 +48,7 @@ const Adress = ({navigation}) => {
                     onChangeText={formik.handleChange('adress')}
                 />
             </View>
-            <View style={[styles.dataMargin, {width: '100%'}]}>
+            <View style={[styles.dataMargin, {width: '96%'}]}>
                 <Text style={styles.dataLabel}>
                     Complemento:
                 </Text>
@@ -74,7 +74,7 @@ const Adress = ({navigation}) => {
                     onChangeText={formik.handleChange('number')}
                 />
             </View>
-            <View style={styles.dataMargin}>
+            <View style={[styles.dataMargin, {width: '60%'}]}>
                 <Text style={styles.dataLabel}>
                     Bairro:
                 </Text>
@@ -87,7 +87,7 @@ const Adress = ({navigation}) => {
                     onChangeText={formik.handleChange('bairro')}
                 />
             </View>
-            <View style={styles.dataMargin}>
+            <View style={[styles.dataMargin, {width: '50%'}]}>
                 <Text style={styles.dataLabel}>
                     Cidade:
                 </Text>
@@ -100,7 +100,7 @@ const Adress = ({navigation}) => {
                     onChangeText={formik.handleChange('city')}
                 />
             </View>
-            <View style={styles.dataMargin}>
+            <View style={[styles.dataMargin, {width: '15%'}]}>
                 <Text style={styles.dataLabel}>
                     UF:
                 </Text>
@@ -113,7 +113,7 @@ const Adress = ({navigation}) => {
                     onChangeText={formik.handleChange('uf')}
                 />
             </View>
-            <View style={styles.dataMargin}>  
+            <View style={[styles.dataMargin, {width: '40%'}]}>  
                 <Text style={styles.dataLabel}>
                     CEP:
                 </Text>
@@ -127,7 +127,7 @@ const Adress = ({navigation}) => {
                 />
             </View>
             <TouchableOpacity onPress={formik.handleSubmit}
-                style={styles.StyledButton}
+                style={[styles.StyledButton, {marginLeft: '8%'}]}
             >
                 {formik.isSubmitting ? (
                     <ActivityIndicator color="#FFF" />
