@@ -1,12 +1,13 @@
 import React from 'react';
-import { View, TextInput, Button, Text, ActivityIndicator } from 'react-native';
+import { View, TextInput, Button, Text, ActivityIndicator, SafeAreaView } from 'react-native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import { Icon } from 'native-base';
 import { DrawerActions } from '@react-navigation/native';
-import { TouchableOpacity } from 'react-native-gesture-handler';
+import {LinearGradient} from 'expo-linear-gradient';
 
+import Colors from '../../constants/Colors';
 import styles from '../../constants/Styles';
 
 const Adress = ({navigation}) => {
@@ -23,10 +24,14 @@ const Adress = ({navigation}) => {
     });
     
       return(
-        <View style={styles.dataContainer}>
-            <View style={styles.header}>
+        <LinearGradient 
+            colors={[Colors.primary, Colors.secondaryLight]}
+            style={{flex:1}}> 
+        <SafeAreaView>
+            <View style={[styles.header, {padding: 15, height: 50, backgroundColor: '#fff'}]}>
                 <Icon
                     name='menu'
+                    style={{marginTop: 3}}
                     onPress={() => navigation.dispatch(DrawerActions.openDrawer())}
                 />
             </View>
@@ -130,7 +135,8 @@ const Adress = ({navigation}) => {
                     <Text style={styles.ButtonText}>Atualizar</Text>
                 )}
             </TouchableOpacity>
-        </View>
+        </SafeAreaView>
+        </LinearGradient>
     );
 }
 
