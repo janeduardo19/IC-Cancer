@@ -22,16 +22,17 @@ const AdressLab = ({navigation}) => {
             ufLab: '',
         }
     });
-    
+
       return(
-        <LinearGradient 
-            colors={[Colors.primary, Colors.secondaryLight]}
-            style={{flex:1}}> 
+        <LinearGradient
+            start={{x: 1.2, y: 0.6}} end={{x: 0.1, y: 0.1}}
+            colors={['#fff',Colors.blue]}
+            style={{flex:1}}>
         <SafeAreaView style={{flexDirection: 'row', flexWrap: 'wrap'}}>
-            <View style={[styles.header, {padding: 15, height: 50, backgroundColor: '#fff'}]}>
+            <View style={[styles.header, {padding: 15, height: 70, backgroundColor: '#fff'}]}>
                 <Icon
                     name='menu'
-                    style={{marginTop: 3}}
+                    style={{marginTop: 10}}
                     onPress={() => navigation.dispatch(DrawerActions.openDrawer())}
                 />
             </View>
@@ -61,7 +62,7 @@ const AdressLab = ({navigation}) => {
                     onChangeText={formik.handleChange('adressLab')}
                 />
             </View>
-            <View style={[styles.dataMargin, {width: '96%'}]}>  
+            <View style={[styles.dataMargin, {width: '96%'}]}>
                 <Text style={styles.dataLabel}>
                     Complemento:
                 </Text>
@@ -113,7 +114,7 @@ const AdressLab = ({navigation}) => {
                     onChangeText={formik.handleChange('cityLab')}
                 />
             </View>
-            <View style={[styles.dataMargin, {width: '18%'}]}>  
+            <View style={[styles.dataMargin, {width: '18%'}]}>
                 <Text style={styles.dataLabel}>
                     UF:
                 </Text>
@@ -126,16 +127,18 @@ const AdressLab = ({navigation}) => {
                     onChangeText={formik.handleChange('ufLab')}
                 />
             </View>
-          <TouchableOpacity onPress={formik.handleSubmit}
-              style={[styles.StyledButton, {marginLeft: '8%'}]}
-          >
-              {formik.isSubmitting ? (
-                  <ActivityIndicator color="#FFF" />
-              ) : (
-                  <Text style={styles.ButtonText}>Atualizar</Text>
-              )}
-          </TouchableOpacity>
         </SafeAreaView>
+        <View style={{alignItems:'center',flexDirection:'column', marginVertical:'4%'}}>
+          <TouchableOpacity onPress={formik.handleSubmit}
+                  style={[styles.defaultButton]}
+              >
+                  {formik.isSubmitting ? (
+                      <ActivityIndicator color="#FFF" />
+                  ) : (
+                      <Text style={styles.ButtonText}>Atualizar</Text>
+                  )}
+            </TouchableOpacity>
+        </View>
         </LinearGradient>
     );
 }

@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, TextInput, Button, Text, ActivityIndicator, SafeAreaView } from 'react-native';
+import { View, TextInput, Button, Text, ActivityIndicator, SafeAreaView, Image } from 'react-native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
@@ -13,7 +13,7 @@ import styles from '../../constants/Styles';
 const PersonalInformation = ({navigation}) => {
   const formik = useFormik({
     initialValues: {
-      name: '', 
+      name: '',
       parentName: '',
       sus: '',
       cpf: '',
@@ -28,17 +28,11 @@ const PersonalInformation = ({navigation}) => {
   });
 
   return(
-    <LinearGradient 
-      colors={[Colors.primary, Colors.secondaryLight]}
+    <LinearGradient
+      start={{x: 1.2, y: 0.6}} end={{x: 0.1, y: 0.1}}
+      colors={['#fff',Colors.secondary]}
       style={{flex:1}}>
     <SafeAreaView style={{flexDirection: 'row', flexWrap: 'wrap'}}>
-      <View style={[styles.header, {padding: 15, height: 50, backgroundColor: '#fff'}]}>
-        <Icon
-          name='menu'
-          style={{marginTop: 3}}
-          onPress={() => navigation.dispatch(DrawerActions.openDrawer())}
-        />
-      </View>
       <View style={[styles.dataMargin, {width: '96%'}]}>
         <Text style={styles.dataLabel}>
           Nome:
@@ -65,7 +59,7 @@ const PersonalInformation = ({navigation}) => {
             onChangeText={formik.handleChange('parentName')}
         />
       </View>
-      <View style={[styles.dataMargin, {width: '52%'}]}>  
+      <View style={[styles.dataMargin, {width: '52%'}]}>
         <Text style={styles.dataLabel}>
           Cartão do SUS:
         </Text>
@@ -117,7 +111,7 @@ const PersonalInformation = ({navigation}) => {
             onChangeText={formik.handleChange('dtEmissao')}
         />
       </View>
-      <View style={[styles.dataMargin, {width: '26%'}]}>  
+      <View style={[styles.dataMargin, {width: '26%'}]}>
         <Text style={styles.dataLabel}>
           Emissor:
         </Text>
@@ -182,17 +176,19 @@ const PersonalInformation = ({navigation}) => {
             onChangeText={formik.handleChange('nationality')}
         />
       </View>
-      <TouchableOpacity onPress={formik.handleSubmit}
-          style={[styles.StyledButton, {marginLeft: '8%'}]}
-      >
-          {formik.isSubmitting ? (
-              <ActivityIndicator color="#FFF" />
-          ) : (
-              <Text style={styles.ButtonText}>Atualizar</Text>
-          )}
-      </TouchableOpacity>
     </SafeAreaView>
+    <View style={{alignItems:'center',flexDirection:'column', marginVertical:'4%'}}>
+      <TouchableOpacity onPress={formik.handleSubmit}
+            style={[styles.defaultButton, {backgroundColor: Colors.secondaryLight}]}
+        >
+            {formik.isSubmitting ? (
+                <ActivityIndicator color="#FFF" />
+            ) : (
+                <Text style={styles.ButtonText}>Atualizar</Text>
+            )}
+        </TouchableOpacity>
+    </View>
     </LinearGradient>
   );
-}  
+}
 export default PersonalInformation;

@@ -34,7 +34,7 @@ const LoginScreen = ({navigation}) => {
     })
 
     return(
-        <LinearGradient 
+        <LinearGradient
             colors={[Colors.primary, Colors.secondaryLight]}
             style={{flex:1}}>
            <SafeAreaView style={{flexDirection: 'column',alignItems: 'center'}}>
@@ -77,18 +77,18 @@ const LoginScreen = ({navigation}) => {
                                     onChangeText={formik.handleChange('password')}
                                 />
                             </Animatable.View>
-                            <Animatable.Text 
+                            <Animatable.Text
                                 animation="bounceIn"
                                 style={styles.subTextInput}>Esqueceu sua senha?</Animatable.Text>
                             <Animatable.Text
                                 animation="bounceIn"
                                 style={styles.subTextInput}
-                                onPress={() => {navigation.navigate('DrawerRoot')}}
+                                onPress={() => {navigation.navigate('FirstAcess')}}
                             >
                                     Primeiro acesso?</Animatable.Text>
                         </View>
                         <TouchableOpacity onPress={formik.handleSubmit}
-                            style={styles.StyledButton}
+                            style={[styles.defaultButton, {backgroundColor: Colors.blue}]}
                         >
                             {formik.isSubmitting ? (
                                 <ActivityIndicator color="#FFF" />

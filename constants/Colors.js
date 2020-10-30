@@ -1,28 +1,33 @@
 const tintColor = '#fff';
 
 export default {
-  grey: '#424242',
-  tintColor,
-  tabIconDefault: '#fff',
-  tabIconSelected: tintColor,
-  tabBar: '#fefefe',
-  errorBackground: 'red',
-  errorText: '#fff',
-  warningBackground: '#EAEB5E',
-  warningText: '#666804',
-  noticeBackground: tintColor,
-  noticeText: '#fff',
-  LoginIcon: '#4f5b62',
-  LoginText: '#fff',
-  white: '#fff',
-  primary: '#b2ebf2',
-  primaryDark: '#81b9bf',
-  primaryLight: '#e5ffff',
-  secondary: '#00bfa5',
-  secondaryDark: '#008e76',
-  secondaryLight: '#5df2d6',
-  placeHolderColor: '#424242',
-  grey: '#eeeeee',
-  greyDark: '#bdbdbd',
-  blue: '#4fc3f7'
+  //Cinza escuro
+  Grey: '#424242',
+  //Azul degrade
+  themeOne_gradient:'#329D9C',
+  DarkBlue: '#3F4079',
+  Blue: '#205072',
+  //Azul cinza
+  DarkPurple: '#313450',
+  //Azul bebe escuro
+  DarkGreen: '#329D9C',
+  //Verde azulado
+  themeOne_gradient2:'#7BE495',
+  //Branco esverdeado
+  LightGreen: '#CDE0C9',
+  Green: '#4DA680',
+  Green2: '#1CDC69',
+  //Roxo
+  themeTwo_gradient: '#681680',
+  //Rosa
+  themeTwo_gradient2: '#FF6B6B',
+  //Vermelho
+  themeThree_gradient: '#FF0000',
+  //Amarelo
+  themeThree_gradient2: '#FFB300',
+  Black: '#272727',
+  White: '#FFFFFF',
+  LightGrey: '#C4C4C4',
+  SoftGrey: '#898A8F',
+  BlueGrey: '#262640',
 };

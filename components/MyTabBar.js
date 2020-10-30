@@ -48,7 +48,7 @@ function MyTabBar({ state, descriptors, navigation }) {
             testID={options.tabBarTestID}
             onPress={onPress}
             onLongPress={onLongPress}
-            style={{ flex: 1 }}
+            style={{ flex: 1}}
           >
             <Text style={{ color: isFocused ? '#673ab7' : '#222' }}>
               {label}

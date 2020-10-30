@@ -3,7 +3,6 @@ import { Platform, StyleSheet, ColorPropType} from 'react-native';
 
 import {Dimensions, PixelRatio} from 'react-native';
 import Colors from './Colors';
-import { ThemeConsumer } from 'react-native-elements';
 const widthPercentageToDP = widthPercent => {
   const screenWidth = Dimensions.get('window').width;
   // Convert string input to decimal number
@@ -28,10 +27,27 @@ const styles = StyleSheet.create({
       flex: 1,
       resizeMode: 'cover',
     },
+    IconProfile: {
+      width: widthPercentageToDP('20%'),
+      height: heightPercentageToDP('10%'),
+      borderRadius: widthPercentageToDP('20%'),
+      borderColor: Colors.White,
+    },
+    IconProfileSmall: {
+      width: widthPercentageToDP('15%'),
+      height: heightPercentageToDP('8%'),
+      borderRadius: widthPercentageToDP('20%'),
+      borderColor: Colors.White,
+    },
+    IconButtom: {
+      width: widthPercentageToDP('20%'),
+      height: heightPercentageToDP('10%'),
+      borderRadius: widthPercentageToDP('20%'),
+    },
     bar: {
       width: widthPercentageToDP('100%'),
       height: heightPercentageToDP('6%'),
-      borderTopLeftRadius: 4,
+      borderTopLeftRadius: 20,
       borderTopRightRadius: 4,
     },
     ButtonText: {
@@ -49,18 +65,24 @@ const styles = StyleSheet.create({
     //D
     dataInput: {
       height: heightPercentageToDP('6%'),
-      borderLeftWidth: 1.9,
-      borderBottomWidth: 1.9,
-      borderBottomColor: '#000',
       borderRadius: 8,
       padding: 8,
       fontSize: 15,
       backgroundColor: '#fff',
       marginRight: 3,
+      shadowColor: '#000',
+      shadowOpacity: 0.8,
+      shadowRadius: 0.1,
+      shadowOffset: {
+       width: 0,
+       height: 3,
+     },
+      elevation: 5,
     },
     dataLabel: {
-      fontSize: 20,
+      fontSize: 15,
       fontWeight: 'bold',
+      marginVertical: heightPercentageToDP('1%'),
     },
     dataMargin: {
       marginHorizontal: heightPercentageToDP('0.6%'),
@@ -69,9 +91,91 @@ const styles = StyleSheet.create({
     //H
     header:{
       width: widthPercentageToDP('100%'),
-      height: heightPercentageToDP('10%'), 
+      height: heightPercentageToDP('23%'),
+      borderBottomEndRadius: 40,
+      borderBottomStartRadius: 40,
       justifyContent: 'space-between',
-      padding: 18,
+      overflow: 'hidden',
+    },
+    noticias:{
+      width: widthPercentageToDP('100%'),
+      height: heightPercentageToDP('20%'),
+      justifyContent: 'space-between',
+      overflow: 'hidden',
+      opacity: 1,
+      flexDirection:'column',
+      justifyContent:'center'
+    },
+    noticias2:{
+      backgroundColor: Colors.White,
+      width: widthPercentageToDP('90%'),
+      height: heightPercentageToDP('100%'),
+      borderTopEndRadius: 20,
+      borderTopStartRadius: 20,
+      alignSelf:'center',
+      padding: 20,
+      shadowColor: '#000',
+      shadowOpacity: 0.2,
+      shadowRadius: 0.1,
+      shadowOffset: {
+       width: 0,
+       height: 1,
+     },
+      elevation: 10,
+    },
+    textbold:{
+      fontWeight: 'bold',
+      fontSize: 16,
+    },
+    text:{
+      fontSize: 12,
+      textAlign: 'center'
+    },
+    bordercontainer:{
+      backgroundColor: Colors.White,
+      width: widthPercentageToDP('50%'),
+      height: heightPercentageToDP('17%%'),
+      borderRadius: 15,
+      margin: 10,
+      marginVertical: 15,
+      shadowColor: '#000',
+      shadowOpacity: 0.6,
+      shadowRadius: 0.1,
+      shadowOffset: {
+       width: 0,
+       height: 3,
+     },
+      elevation: 5,
+    },
+    separator:{
+      backgroundColor: Colors.Grey,
+      width: widthPercentageToDP('80%'),
+      height: heightPercentageToDP('0.15%'),
+      opacity: 0.2,
+      marginVertical: '5%'
+    },
+    homenotification:{
+      flexDirection:'column',
+      alignItems:'center',
+      backgroundColor: Colors.White,
+      width: widthPercentageToDP('32.5%'),
+      height: heightPercentageToDP('17%%'),
+      marginTop: widthPercentageToDP('10%'),
+      borderRadius: 10,
+      margin: 10,
+      marginVertical: 15,
+      shadowColor: '#000',
+      shadowOpacity: 0.6,
+      shadowRadius: 0.1,
+      shadowOffset: {
+       width: 10,
+       height: 10,
+     },
+      elevation:5,
+    },
+    noticiasImage:{
+      width: widthPercentageToDP('100%'),
+      height: heightPercentageToDP('30%%'),
     },
     helpContainer: {
       marginTop: 15,
@@ -85,12 +189,12 @@ const styles = StyleSheet.create({
       color: '#2e78b7',
     },
     homeButton:{
-      margin: 15,
+      margin: 10,
       borderRadius: 10,
-      backgroundColor: Colors.white,
+      backgroundColor: Colors.White,
       alignItems: 'center',
-      width: widthPercentageToDP('40%'),
-      height: heightPercentageToDP('20%'),
+      width: widthPercentageToDP('30%'),
+      height: heightPercentageToDP('15%'),
       shadowColor: '#000',
       shadowOpacity: 0.8,
       shadowRadius: 0.1,
@@ -98,12 +202,31 @@ const styles = StyleSheet.create({
        width: 0,
        height: 8,
      },
-      elevation: 7,
+      elevation: 3,
     },
     homeTitleText:{
-      color: Colors.blue,
-      fontSize: heightPercentageToDP('4.5%'),
-      marginTop: heightPercentageToDP('4%')
+      fontSize: heightPercentageToDP('3.5%'),
+      fontWeight: 'bold'
+    },
+    circle: {
+      backgroundColor: Colors.White,
+      width: widthPercentageToDP('19%'),
+      height: heightPercentageToDP('9.5%'),
+      borderRadius: widthPercentageToDP('19%'),
+      shadowColor: '#000000',
+      shadowOpacity: 0.5,
+      shadowRadius: 20,
+      shadowOffset: {
+       width: 0.6,
+       height: 0.7,
+     },
+      elevation: 10,
+    },
+    fastbuttom: {
+      flexDirection: 'row',
+      justifyContent: 'space-between',
+      width: widthPercentageToDP('80%'),
+      marginVertical: widthPercentageToDP('-10%'),
     },
     //I
     imageContainer: {
@@ -114,9 +237,8 @@ const styles = StyleSheet.create({
     },
     imageContainerGreat: {
       resizeMode: 'contain',
-      height: heightPercentageToDP('70%'),
-      marginBottom: '20%',
-      marginTop: '20%'
+      height: heightPercentageToDP('90%'),
+      alignContent: 'center'
     },
     imageContainerMedium: {
       resizeMode: 'contain',
@@ -124,11 +246,12 @@ const styles = StyleSheet.create({
     },
     imageHomeContainer: {
       resizeMode: 'contain',
-      height: heightPercentageToDP('20%'),
+      height: heightPercentageToDP('12.5%'),
+      alignContent: 'center'
     },
     //M
     marginBasic: {
-      margin: 10,
+      margin: 20,
       justifyContent: 'flex-start'
     },
     //N
@@ -136,10 +259,9 @@ const styles = StyleSheet.create({
       marginTop: 5,
     },
     //P
-    primaryButton:{
+    defaultButton:{
       width: widthPercentageToDP('90%'),
       height: heightPercentageToDP('8%'),
-      backgroundColor: Colors.secondaryLight,
       borderRadius: 20,
       margin:5,
       flexDirection: 'row',
@@ -154,6 +276,7 @@ const styles = StyleSheet.create({
        height: 3,
      },
       elevation: 5,
+      padding: 12
     },
     //S
     SafeView:{
@@ -204,7 +327,7 @@ const styles = StyleSheet.create({
       fontSize: 17,
       color: 'rgba(96,100,109, 1)',
       textAlign: 'center',
-    }, 
+    },
     textBasic: {
       textAlign: 'justify',
       fontSize: heightPercentageToDP('2%'),
@@ -223,7 +346,7 @@ const styles = StyleSheet.create({
     titleText:{
       textAlign: 'center',
       fontWeight: 'bold',
-      fontSize: heightPercentageToDP('2%'),
+      fontSize: heightPercentageToDP('3%'),
       marginVertical: heightPercentageToDP('5%')
     },
     tomTab: {

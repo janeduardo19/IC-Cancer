@@ -1,4 +1,3 @@
-
 import React,{Component} from 'react';
 import { View, Text, TouchableWithoutFeedback, FlatList, StyleSheet, useContext, ScrollView, Button} from 'react-native';
 import TabBarIcon from '../../components/TabBarIcon';
@@ -6,6 +5,8 @@ import axios from 'axios';
 import Colors from '../../constants/Colors';
 import { Icon } from 'native-base';
 import { DrawerActions } from '@react-navigation/native';
+import styles from '../../constants/Styles';
+import { useAuth } from '../auth';
 
 export default class ReminderList extends Component {
   state = {
@@ -20,33 +21,37 @@ export default class ReminderList extends Component {
   }
 
   render() {
-   const {ReminderList} = this.state;
-   const navigation = (this.props.navigation)
-   return (
+    const {ReminderList} = this.state;
+    const navigation = (this.props.navigation)
+    //const [, { logout }] = useAuth();
+    return (
       <View>
-          <View style={[styles.header, {height: 30, marginBottom: 20, }]}>
-            <Icon
-              name='menu'
-              style={{marginLeft: 8, padding: 10, marginTop: 8}}
-              onPress={() => navigation.dispatch(DrawerActions.openDrawer())}
-            />
+          <View style={[styles.header, {padding: 15, height: 80, backgroundColor: '#fff',}]}>
+              <View style={{width: 40 }}>
+                  <Icon
+                      name='exit'
+                      style={{marginTop: 10}}
+                      //onPress={ logout }
+                  />
+                  <Text>Sair</Text>
+              </View>
           </View>
           <ScrollView>
-            <View style={styles.pad}>
-              { 
+            <View style={styles1.pad}>
+              {
               ReminderList.map(({id,hour,date,title,subtitle}) => (
                 <TouchableWithoutFeedback key={id} onPress={() => navigation.navigate('Reminder')}>
                   <View>
-                    <View style={styles.container}>
+                    <View style={styles1.container}>
                       <View style={{flex: 1,flexDirection: "row", justifyContent: "space-between", padding:1}}>
                         <Text>{hour}</Text>
                         <Text>{date}</Text>
                       </View>
                       <View>
-                        <Text style={styles.title}>{title}</Text>
+                        <Text style={styles1.title}>{title}</Text>
                       </View>
                       <View style={{flex: 1,flexDirection: "row", justifyContent: "space-between", padding:5}}>
-                        <Text style={styles.text}>{subtitle}</Text>
+                        <Text style={styles1.text}>{subtitle}</Text>
                         <TabBarIcon name="md-mail-unread"/>
                       </View>
                     </View>
@@ -56,13 +61,13 @@ export default class ReminderList extends Component {
               ))
               }
             </View>
-          </ScrollView>    
+          </ScrollView>
       </View>
     )
   }
 }
 
-export const styles = StyleSheet.create({
+export const styles1 = StyleSheet.create({
   container: {
     padding: 5,
     backgroundColor: Colors.white,
